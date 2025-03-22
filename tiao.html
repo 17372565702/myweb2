@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动博物馆</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0; /* 去除默认的margin */
+            padding: 0; /* 去除默认的padding */
+            color: #333;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 确保body至少占满整个视口高度 */
+            overflow: hidden;
+        }
+
+        .background-container {
+            position: relative;
+            width: 100%;
+            flex: 1; /* 使背景容器占据剩余空间 */
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./bg2.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        header {
+            background-color: transparent;
+            color: rgb(15, 14, 14);
+            padding: 1em;
+            box-shadow: none;
+            display: flex;
+            flex-direction: row; /* 改为水平方向 */
+            align-items: center; /* 垂直居中 */
+            position: relative; /* 添加相对定位 */
+            z-index: 1; /* 确保header在背景之上 */
+        }
+
+        .logo {
+            width: 60px; /* 缩小图片尺寸 */
+            height: auto;
+            margin-right: 20px; /* 右边距 */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+       
+
+        .text-box {
+            background-color: rgba(128, 128, 128, 0.8); /* 半透明灰色背景 */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1; /* 确保文本框在背景之上 */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            background-color: transparent;
+            box-shadow: none;
+            margin: 0;
+            font-weight: bold;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content; /* 使导航栏宽度适应内容 */
+        }
+
+        nav a {
+            padding: 14px 20px;
+            font-size: 40px;
+            text-decoration: none;
+            color: rgb(15, 14, 14);
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* 修改hover时的背景颜色 */
+            text-decoration: underline; /* 鼠标放上加上下划线 */
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <div class="background-image"></div>
+        <header>
+            <img src="./bg4.png" alt="南通大学文物移动‘述’千年实践团标志" class="logo">
+            <h1>移动博物馆</h1>
+           
+        </header>
+        <div style="position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            font-weight:bold; 
+            font-size: 70px; 
+            color:black; 
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+    南通大学 &nbsp;&nbsp;“移动博物馆”
+</div>
+    </div>
+
+    <!-- 直接使用nav标签不再需要外层容器 -->
+    <nav>
+        <a href="#museumEducation">博物育人</a>
+        <a href="#culturalCreativity">博览文创</a>
+        <a href="#historicalDrama">博舞演绎</a>
+    </nav>
+</body>
+</html>
